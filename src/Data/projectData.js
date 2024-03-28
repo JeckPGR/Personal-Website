@@ -6,7 +6,7 @@ export const ProjectData = [
     id: 1,
     tittle: "EduLocal",
     img: EduLocal,
-    Desc: "EduLocal is a platform ",
+    Desc: "EduLocal is a platform that provides educational",
     type: "Personal",
     viewurl: "#",
     githuburl: "#",
@@ -28,5 +28,14 @@ export const ProjectData = [
     type: "Personal",
     viewurl: "https://personal-tailwind.vercel.app/",
     githuburl: "https://github.com/JeckPGR/Personal-Tailwind.git",
+  },
+  {
+    id: 4,
+    tittle: "AirCarft",
+    Desc: "3D Designer AirCraft Web App",
+    img: "",
+    type: "Collab",
+    viewurl: "#",
+    githuburl: "#",
   },
 ];
