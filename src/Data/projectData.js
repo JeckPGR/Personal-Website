@@ -1,12 +1,13 @@
 import Aircarft from "../../public/AirCarft.webp";
-import EduLocal from "../../public/EduLocal.webp";
+import EduLocal from "../../public/edulocal.webp";
 import PTailwind from "../../public/PersonalTailwind.webp";
+import PictureUA from "../../public/imageUA.webp";
 export const ProjectData = [
   {
     id: 1,
     tittle: "EduLocal",
     img: EduLocal,
-    Desc: "EduLocal is a platform that provides educational",
+    Desc: "EduLocal is a platform that provides educational around Bandung",
     type: "Personal",
     viewurl: "#",
     githuburl: "#",
@@ -23,7 +24,7 @@ export const ProjectData = [
   {
     id: 3,
     tittle: "Personal Tailwind",
-    Desc: "3D Designer AirCraft Web App",
+    Desc: "My First Personal Website Build by Tailwind Only ",
     img: PTailwind,
     type: "Personal",
     viewurl: "https://personal-tailwind.vercel.app/",
@@ -31,9 +32,9 @@ export const ProjectData = [
   },
   {
     id: 4,
-    tittle: "AirCarft",
-    Desc: "3D Designer AirCraft Web App",
-    img: "",
+    tittle: "Skinmate",
+    Desc: "Interactive Skincare Pairing Quiz Crafted with Precision",
+    img: PictureUA,
     type: "Collab",
     viewurl: "#",
     githuburl: "#",

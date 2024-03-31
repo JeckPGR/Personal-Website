@@ -23,7 +23,7 @@ const techstack = [
     id: 2,
     image: SiCss3,
     title: "CSS3",
-    hovercolor: "amber-400",
+    hovercolor: "blue-400",
   },
   {
     id: 3,
@@ -81,12 +81,12 @@ const colorMap = {
   "orange-400": "#E34F26",
   "orange-200": "#ff8c00",
   "sky-400": "#38BDF8",
+  "blue-400": "#3BA8F6",
   "blue-500": "#3B82F6",
   "amber-400": "#FBBF24",
-  "purple-500": "#9063CD",
+  "purple-500": "#9013CD",
   "black-500": "#94a2d4",
   "gray-500": "#808080",
-  "dark:black-500": "#000000",
   "green-400": "#AADB1E",
   "slate-200": "fefefefe",
 };
@@ -96,15 +96,15 @@ export const Techstack = () => {
     <>
       <div
         aria-label="Tech Stack"
-        className="flex flex-col gap-y-10 justify-center items-center mt-20 lg:mt-0"
+        className="flex flex-col gap-y-10 justify-center items-center mt-20 lg:mt-0 mb-6"
       >
         <h1 className="text-6xl text-center text-slate-200 font-semibold dark:text-slate-950">
           Tech Stack
         </h1>
-        <div className="flex-wrap justify-center items-center lg:grid lg:grid-cols-5 gap-8 flex md:w-[700px] lg:py-10 lg:pb-20 lg:w-full max-w-6xl">
+        <div className="flex-wrap justify-center items-center lg:grid lg:px-10 lg:grid-cols-5 gap-8 flex md:w-[700px] lg:py-10 lg:pb-20 lg:w-full max-w-6xl">
           {techstack.map((data) => {
             const IconComponent = data.image;
-            let iconColor = colorMap[data.hovercolor] || "#ffffff";
+            let iconColor = colorMap[data.hovercolor] || "#000009";
 
             return (
               <div
@@ -114,7 +114,7 @@ export const Techstack = () => {
                 <IconComponent size={80} color={iconColor} loading="lazy" />
                 <p
                   className="text-center font-semibold text-lg"
-                  style={{ color: colorMap[data.hovercolor] || "#ffffff" }}
+                  style={{ color: colorMap[data.hovercolor] || "#000000" }}
                 >
                   {data.title}
                 </p>

@@ -2,7 +2,7 @@ import Button from "../Elements/Button";
 import myself from "../../../public/Me.webp";
 export const AboutFirst = () => {
   return (
-    <div className="flex flex-col-reverse h-screen lg:flex-row items-center justify-between gap-10 ">
+    <div className="flex flex-col-reverse h-full p-10    lg:flex-row items-center justify-between gap-10 ">
       <div className="w-full flex flex-col lg:justify-start gap-y-8 items-center lg:items-start lg:w-1/2 text-slate-200 dark:text-slate-950">
         <h2 className="text-4xl md:text-6xl font-bold mb-4 text-center dark:text-slate-950">
           About Me

@@ -5,7 +5,7 @@ import { useState } from "react";
 export const ProjectCard = forwardRef(
   ({ id, title, img, viewurl, githuburl, children }, ref) => {
     const [imageLoaded, setImageLoaded] = useState(false); //Blur it before load
-    const imageClass = `w-full h-40 object-cover transition-all duration-700 ease-in-out ${
+    const imageClass = `w-full h-40 object-cover transition-all bg-center bg-slate-900 duration-700 ease-in-out ${
       imageLoaded ? "filter-none" : "filter blur-lg"
     }`;
     return (
@@ -13,7 +13,7 @@ export const ProjectCard = forwardRef(
         aria-label="card"
         ref={ref}
         key={id}
-        className=" border flex flex-col justify-between hover:shadow-xl hover:-translate-y-2 hover:shadow-slate-200/20 dark:hover:shadow-slate-950/20  bg-slate-950 dark:bg-slate-100/40 text-slate-200 transition-all duration-300  w-80 overflow-hidden h-96  border-slate-400 rounded-md"
+        className=" border flex flex-col justify-between hover:shadow-xl hover:-translate-y-2 hover:shadow-slate-200/20 dark:hover:shadow-slate-950/20  bg-slate-950 dark:bg-slate-100/40 text-slate-200 transition-all duration-300 w-80  overflow-hidden lg:h-96 h-[400px]  border-slate-400 rounded-md"
       >
         <img
           src={img}
@@ -29,7 +29,7 @@ export const ProjectCard = forwardRef(
           </p>
           <div></div>
         </div>
-        <div className="flex flex-col lg:flex-row lg:justify-start text-center gap-3 px-2 p-4 lg:pt-0 w-full justify-center items-center ">
+        <div className="flex flex-col lg:flex-row lg:justify-start text-center gap-3 px-2 py-3 lg:pt-0 w-full justify-center items-center ">
           <ButtonCard type="Live" viewurl={viewurl} />
           <ButtonCard githuburl={githuburl} />
         </div>

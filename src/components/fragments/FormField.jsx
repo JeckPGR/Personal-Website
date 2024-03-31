@@ -6,12 +6,12 @@ export const Formfield = ({ handlesubmit, formData, handleChange }) => {
   return (
     <form
       onSubmit={handlesubmit}
-      className="w-full max-w-lg lg:space-y-20 space-y-16 flex flex-col"
+      className="w-full  max-w-lg lg:space-y-20 space-y-16 flex flex-col"
     >
       <Input
         type="text"
         name="fullName"
-        placeholder="FULL NAME *"
+        placeholder="Your name..."
         value={formData.fullname}
         onChange={handleChange}
         required
@@ -20,23 +20,24 @@ export const Formfield = ({ handlesubmit, formData, handleChange }) => {
         <Input
           type="email"
           name="email"
-          placeholder="EMAIL *"
+          placeholder="Your email..."
           value={formData.email}
           onChange={handleChange}
+          custom="w-1/2"
           required
         />
         <Input
           type="tel"
           name="phone"
-          placeholder="PHONE *"
+          placeholder="Phone number"
           value={formData.phone}
           onChange={handleChange}
-          required
+          custom="w-1/2"
         />
       </FormInputGroup>
       <TextArea
         name="message"
-        placeholder="MESSAGE *"
+        placeholder="Message "
         value={formData.message}
         onChange={handleChange}
         required
@@ -44,7 +45,7 @@ export const Formfield = ({ handlesubmit, formData, handleChange }) => {
       <button
         aria-label="submit"
         type="submit"
-        className="flex justify-center transition-all duration-300 lg:hover:bg-transparent lg:ring-1 lg:ring-slate-200  items-center lg:self-end p-2 bg-white lg:bg-transparent lg:text-white lg:hover:p-5 text-black font-bold rounded-sm lg:rounded-full active:bg-gray-200"
+        className="flex justify-center dark:text-slate-950 dark:ring-slate-950 transition-all duration-300 lg:hover:bg-transparent lg:ring-1 lg:ring-slate-200  items-center lg:self-end p-2 bg-white lg:bg-transparent lg:text-white lg:hover:p-5 text-black font-bold rounded-sm lg:rounded-full active:bg-gray-200"
       >
         <span className="lg:hidden">Submit</span>
         <IoIosArrowRoundForward size={40} className="lg:block hidden" />
@@ -54,7 +55,7 @@ export const Formfield = ({ handlesubmit, formData, handleChange }) => {
 };
 
 const FormInputGroup = ({ children }) => (
-  <div className="flex justify-between">{children}</div>
+  <div className="flex justify-between gap-10">{children}</div>
 );
 
 Formfield.propTypes = {

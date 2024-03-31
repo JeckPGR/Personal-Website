@@ -27,8 +27,8 @@ const ContactPage = () => {
 
   return (
     <>
-      <div className=" bg-slate-950  h-full">
-        <div className="flex flex-col relative md:flex-row md:gap-x-4 lg:gap-x-0 items-center justify-center bg-slate-950 text-white h-full">
+      <div className=" bg-slate-950   h-full">
+        <div className="flex flex-col dark:bg-white dark:text-slate-950 relative md:flex-row md:gap-x-4 lg:gap-x-0 items-center justify-center bg-slate-950 text-white h-full">
           <div className=" hidden lg:flex absolute top-32 gap-y-12 left-[37%] flex-col">
             <a className="flex items-center gap-x-4 cursor-pointer text-xl hover:underline">
               <FaPhone size={25} />
@@ -52,7 +52,7 @@ const ContactPage = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 md:w-[50%] px-5 lg:px-10 py-10 lg:py-20">
+          <div className="flex  flex-col overflow-hidden justify-center items-center w-full lg:w-1/2 md:w-[50%] px-5 lg:px-10 py-10 lg:py-20">
             <Formfield
               handleSubmit={handleSubmit}
               formData={formData}

@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex items-center border-b  border-slate-200/5  dark:bg-white dark:text-slate-9500 z-20 justify-between bg-slate-950 px-8  md:px-14  w-full py-3  relative">
+    <nav className="flex items-center border-b dark:border-slate-950/40 border-slate-200/5  dark:bg-white dark:text-slate-9500 z-20 justify-between bg-slate-950 px-8  md:px-14  w-full py-3  relative">
       <Link
         to="/"
         className="text-4xl text-slate-200 font-semibold font-Playfair dark:text-slate-950"
