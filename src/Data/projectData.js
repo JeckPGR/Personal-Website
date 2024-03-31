@@ -1,7 +1,7 @@
-import Aircarft from "../../public/AirCarft.webp";
-import EduLocal from "../../public/edulocal.webp";
-import PTailwind from "../../public/PersonalTailwind.webp";
-import PictureUA from "../../public/imageUA.webp";
+import Aircarft from "../assets/Aircarft.webp";
+import EduLocal from "../assets/edulocal.webp";
+import PTailwind from "../assets/PersonalTailwind.webp";
+import PictureUA from "../assets/imageUA.webp";
 export const ProjectData = [
   {
     id: 1,

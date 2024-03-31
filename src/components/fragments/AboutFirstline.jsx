@@ -1,5 +1,5 @@
 import Button from "../Elements/Button";
-import myself from "../../../public/Me.webp";
+import myself from "../../assets/Me.webp";
 export const AboutFirst = () => {
   return (
     <div className="flex flex-col-reverse h-full p-10    lg:flex-row items-center justify-between gap-10 ">
