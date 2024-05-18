@@ -4,7 +4,7 @@ import { Darktoggle } from "../components/darktoggle";
 
 function Firstpage() {
   return (
-    <div className="dark:bg-white  bg-slate-950 text-slate-200 h-screen dark:text-slate-950 w-full flex  items-center flex-col">
+    <div className="dark:bg-mywhite  bg-primary text-mywhite h-screen dark:text-primary w-full flex  items-center flex-col">
       <Navbar />
       <Hero />
       <Darktoggle />

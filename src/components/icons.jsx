@@ -1,7 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { SiReplit } from "react-icons/si";
 
 export default function Icons() {
   return (
@@ -21,12 +20,6 @@ export default function Icons() {
         <a href="">
           <FaInstagram />
         </a>
-      </div>
-      <div className=" hover:text-orange-600">
-        {" "}
-        <a href="">
-          <SiReplit />
-        </a>{" "}
       </div>
     </>
   );

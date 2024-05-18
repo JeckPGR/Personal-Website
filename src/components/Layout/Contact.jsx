@@ -1,63 +1,46 @@
-import { useState } from "react";
-import { FaPhone } from "react-icons/fa6";
-import { IoMailSharp } from "react-icons/io5";
-import { Formfield } from "../fragments/FormField";
-
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    console.log(formData);
-  };
-
   return (
     <>
-      <div className=" bg-slate-950   h-full">
-        <div className="flex flex-col dark:bg-white dark:text-slate-950 relative md:flex-row md:gap-x-4 lg:gap-x-0 items-center justify-center bg-slate-950 text-white h-full">
-          <div className=" hidden lg:flex absolute top-32 gap-y-12 left-[37%] flex-col">
-            <a className="flex items-center gap-x-4 cursor-pointer text-xl hover:underline">
-              <FaPhone size={25} />
-              <p>+62-877-9478-0139</p>
-            </a>
-            <a className="flex items-center gap-x-4 cursor-pointer text-xl hover:underline">
-              <IoMailSharp size={25} />
-              <p>dzakyrazi@gmail.com</p>
-            </a>
-          </div>
-
-          {/* Left Section */}
-          <div className="flex flex-col justify-center  items-center w-full lg:w-1/2 md:w-[45%] px-5 lg:px-10 md:py-0   py-10 lg:py-20 h-fit">
-            <h1 className="text-8xl md:text-[105px] -indent-24 md:indent-0 lg:text-[180px] md:text-start w-fit  md:w-full  text-center font-thin mb-4 leading-none">
-              LET&apos;S
-              <span className=" lg:block block  lg:indent-28 md:indent-7">
-                GET IN
-              </span>{" "}
-              TOUCH
+      <div className=" bg-primary py-11 px-4 dark:bg-mywhite   h-full">
+        <div className="flex flex-col xl:h-[68.2dvh] dark:bg-mywhite items-center gap-y-2 bg-primary dark:text-primary relative     text-mywhite h-full">
+          <div>
+            <h1 className=" text-base md:text-xl  tracking-[6px]  font-Jakarta  font-semibold  uppercase text-center dark:text-slate-950 text-blue-500">
+              Contact
             </h1>
+            <h2 className="text-4xl md:text-5xl mb-4 mt-2 text-mywhite font-black text-center font-Jakarta dark:text-slate-950">
+              Get In Touch<span className="text-blue-700">.</span>
+            </h2>
           </div>
-
-          {/* Right Section */}
-          <div className="flex  flex-col overflow-hidden justify-center items-center w-full lg:w-1/2 md:w-[50%] px-5 lg:px-10 py-10 lg:py-20">
-            <Formfield
-              handleSubmit={handleSubmit}
-              formData={formData}
-              handleChange={handleChange}
-            />
+          <div className="mt-2   ">
+            <p className="text-3xl  md:text-4xl text-center font-black">
+              Have any project in mind?
+            </p>
+            <p className="text-3xl my-1  md:text-4xl text-center font-black text-blue-600">
+              Or
+            </p>
+            <p className="text-3xl  md:text-4xl text-center font-black">
+              Have any project to work with?
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row mt-10 gap-4 w-full md:justify-center items-center ">
+            <a
+              href="mailto:dzakyrazi@gmail.com"
+              className="rounded-full font-semibold text-center bg-blue-700 py-3 px-6 hover:bg-blue-600 duration-200"
+            >
+              Contact via email
+            </a>
+            <a
+              href="https://www.linkedin.com/messaging/compose/?recipientId=67b630248"
+              className="rounded-full font-semibold text-center bg-blue-700 py-3 px-6 hover:bg-blue-600 duration-200"
+              target="blank"
+            >
+              Chat on LinkedIn
+            </a>
+          </div>
+          <div>
+            <p className=" mt-8  text-xl text-center font-black">
+              Let&apos;s create something amazing together.
+            </p>
           </div>
         </div>
       </div>

@@ -96,7 +96,7 @@ export const Techstack = () => {
     <>
       <div
         aria-label="Tech Stack"
-        className="flex flex-col gap-y-10 justify-center items-center mt-20 lg:mt-0 mb-6"
+        className="flex flex-col gap-y-10 justify-center items-center  lg:mt-0 mb-6"
       >
         <h1 className="text-6xl text-center text-slate-200 font-semibold dark:text-slate-950">
           Tech Stack

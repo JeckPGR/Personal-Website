@@ -5,7 +5,7 @@ import { Footer } from "../Elements/Footer";
 import { ProjectData } from "../../Data/projectData";
 
 export const Project = () => {
-  const [activetype, setactivetype] = useState("Personal");
+  const [activetype, setactivetype] = useState("Website");
   const projectContainerRef = useRef(null);
 
   const Filteredproject = ProjectData.filter(
@@ -22,12 +22,17 @@ export const Project = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center pt-11 items-center gap-y-20 dark:bg-white bg-slate-950 dark:text-slate-950 text-white">
-        <h1 className="text-5xl lg:text-6xl font-normal font-Playfair">
-          My Project
-        </h1>
+      <div className="flex flex-col justify-center pt-11 items-center gap-y-20 dark:bg-mywhite bg-primary dark:text-primary text-white">
+        <div>
+          <h1 className="text-base md:text-xl  tracking-[6px]  font-Jakarta  font-semibold  uppercase text-center dark:text-blue-700 text-blue-500">
+            Project
+          </h1>
+          <h2 className="text-4xl md:text-5xl mb-4 mt-2 text-mywhite font-black text-center font-Jakarta dark:text-primary">
+            My Project<span className="text-blue-700">.</span>
+          </h2>
+        </div>
         <div className=" flex text-center text-slate-600 w-3/4 justify-between lg:justify-around  items-center">
-          {["Collab", "Personal", "UIUX"].map((type) => (
+          {["Mobile", "Website"].map((type) => (
             <button
               key={type}
               className={` px-4 md:px-8 py-2 text-slate-200 hover:bg-transparent hover:ring-1 dark:hover:text-white hover:ring-slate-200 dark:hover:bg-slate-500 dark:text-slate-950 dark:ring-0 rounded-full lg:text-lg text-base hover:text-white transition duration-300 ${
@@ -42,18 +47,18 @@ export const Project = () => {
         </div>
         <div
           ref={projectContainerRef}
-          className=" flex px-8  gap-14 items-center justify-center flex-wrap"
+          className=" grid grid-cols-1 px-4 md:px-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-10   gap-y-6 gap-x-3 items-center justify-center "
         >
           {Filteredproject.length === 0 ? (
             <>
               <div className="h-96 flex justify-center items-center">
-                <p className="text-4xl text-center font-semibold text-slate-400/70">
+                <p className="text-4xl text-center  col-span-full font-semibold text-slate-400/70">
                   {activetype} Project is not available
                 </p>
               </div>
             </>
           ) : (
-            Filteredproject.map((data, index) => (
+            Filteredproject.map((data) => (
               <ProjectCard
                 key={data.id}
                 tittle={data.tittle}
@@ -62,14 +67,14 @@ export const Project = () => {
                 viewurl={data.viewurl}
                 loading="lazy"
                 githuburl={data.githuburl}
+                techStack={data.techStack}
+                disableGithubLink={data.disableGithubLink}
                 ref={(projectRef) => {
                   if (projectRef) {
-                    projectanimation(projectRef, index);
+                    projectanimation(projectRef, data.id);
                   }
                 }}
-              >
-                {data.Desc}
-              </ProjectCard>
+              ></ProjectCard>
             ))
           )}
         </div>

@@ -5,7 +5,8 @@
 @layer base {
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
-    width: 7px;
+    width: 4px;
+    height: 1px;
   }
 
   html::-webkit-scrollbar-track,
@@ -25,4 +26,17 @@
   body::-webkit-scrollbar-thumb:hover {
     background: #b2b2b2ec;
   }
+}
+
+.card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: #0e2444;
+  border: 1px solid rgba(164, 163, 163, 0.126);
+}
+
+.lightcard {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
 }

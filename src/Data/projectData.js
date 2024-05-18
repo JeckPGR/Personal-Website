@@ -1,42 +1,64 @@
 import Aircarft from "../assets/Aircarft.webp";
 import EduLocal from "../assets/edulocal.webp";
+import WatchSite from "../assets/WatchSite.webp";
+import Autosphere from "../assets/Autosphere.webp";
 import PTailwind from "../assets/PersonalTailwind.webp";
 import PictureUA from "../assets/imageUA.webp";
+
 export const ProjectData = [
   {
     id: 1,
     tittle: "EduLocal",
     img: EduLocal,
-    Desc: "EduLocal is a platform that provides educational around Bandung",
-    type: "Personal",
+    type: "Website",
     viewurl: "#",
     githuburl: "#",
+    techStack: ["Laravel", "Bootstrap", "MySQL", "PHP"],
+    disableGithubLink: true,
   },
   {
     id: 2,
     tittle: "Aircarft",
     img: Aircarft,
-    Desc: "3D Designer AirCraft Web App",
-    type: "Personal",
+    type: "Website",
     viewurl: "https://air-carft.vercel.app/",
     githuburl: "https://github.com/JeckPGR/AirCarft.git",
+    techStack: ["React", "TailwindCSS"],
   },
   {
     id: 3,
     tittle: "Personal Tailwind",
-    Desc: "My First Personal Website Build by Tailwind Only ",
     img: PTailwind,
-    type: "Personal",
+    type: "Website",
     viewurl: "https://personal-tailwind.vercel.app/",
     githuburl: "https://github.com/JeckPGR/Personal-Tailwind.git",
+    techStack: ["TailwindCSS"],
   },
   {
     id: 4,
+    tittle: "WatchSite",
+    img: WatchSite,
+    type: "Website",
+    viewurl: "https://watch-site.vercel.app/",
+    githuburl: "#",
+    techStack: ["React", "TailwindCSS"],
+  },
+  {
+    id: 5,
+    tittle: "Autosphere",
+    img: Autosphere,
+    type: "Website",
+    viewurl: "https://autosphere-orpin.vercel.app/",
+    githuburl: "#",
+    techStack: ["React", "TailwindCSS"],
+  },
+  {
+    id: 6,
     tittle: "Skinmate",
-    Desc: "Interactive Skincare Pairing Quiz Crafted with Precision",
     img: PictureUA,
-    type: "Collab",
+    type: "Mobile",
     viewurl: "#",
     githuburl: "#",
+    techStack: ["Flutter", "Firebase"],
   },
 ];

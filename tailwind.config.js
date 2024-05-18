@@ -6,12 +6,15 @@ export default {
     extend: {
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
+        Jakarta: ["'Plus Jakarta Sans'", "sans-serif"],
       },
       boxShadow: {
         techcard: "1px 1px 20px 3px rgb(0 0 0 / 0.05)",
       },
       colors: {
-        primary: "#f97316", // Update this to use a color value instead of a utility class
+        primary: "#0a192f",
+        mywhite: "#FCFCFA",
+        mygrey: "D4D3D1", // Update this to use a color value instead of a utility class
       },
       fontSize: {
         herosmall: [
