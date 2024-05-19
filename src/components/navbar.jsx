@@ -53,10 +53,15 @@ export default function Navbar() {
 
     document.title = pageTitle;
   }, [location.pathname]);
+  const isHomePage = location.pathname === "/";
 
   return (
     <header className="w-full">
-      <nav className="flex items-center fixed top-0  dark:border-none  shadow dark:shadow   shadow-blue-950 dark:bg-mywhite dark:text-primary  z-20 justify-between bg-primary  px-8  md:px-14  w-full py-3  ">
+      <nav
+        className={`flex items-center ${
+          isHomePage ? "" : "fixed top-0"
+        } dark:border-none shadow dark:shadow shadow-blue-950 dark:bg-mywhite dark:text-primary z-20 justify-between bg-primary px-8 md:px-14 w-full py-3`}
+      >
         <Link
           to="/"
           className="text-4xl text-slate-200 font-semibold font-Jakarta dark:text-primary "
@@ -87,7 +92,7 @@ export default function Navbar() {
             {["/About", "/Project", "/Contact"].map((path, index) => (
               <li
                 key={index}
-                className="group  relative overflow-hidden  transition-all  duration-300 ease-in-out text-4xl font-Playfair uppercase w-full h-24 flex justify-center items-center"
+                className="group  relative overflow-hidden  transition-all  duration-300 ease-in-out text-2xl md:text-3xl xl:text-4xl font-Playfair uppercase w-full h-24 flex justify-center items-center"
               >
                 <button
                   role="link"

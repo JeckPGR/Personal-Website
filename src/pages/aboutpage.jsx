@@ -4,7 +4,7 @@ import Navbar from "../components/navbar";
 
 function Aboutpage() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Navbar />
       <AboutSection />
       <Darktoggle />

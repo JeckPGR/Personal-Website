@@ -4,11 +4,11 @@ import Navbar from "../components/navbar";
 
 function Projectpage() {
   return (
-    <>
+    <section className="overflow-hidden">
       <Navbar />
       <Project />
       <Darktoggle />
-    </>
+    </section>
   );
 }
 

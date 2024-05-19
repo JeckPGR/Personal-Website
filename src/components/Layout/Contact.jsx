@@ -9,8 +9,8 @@ const ContactPage = () => {
 
   return (
     <>
-      <div className="bg-primary py-32 px-4 dark:bg-mywhite h-full">
-        <div className="flex flex-col xl:h-[68.2dvh] justify-center items-center dark:bg-mywhite items-center gap-y-2 bg-primary dark:text-primary relative text-mywhite h-full">
+      <div className="bg-primary py-20 px-4 dark:bg-mywhite h-full">
+        <div className="flex flex-col xl:h-[68.2dvh] justify-center items-center dark:bg-mywhite gap-y-2 bg-primary dark:text-primary relative text-mywhite h-full">
           <div data-aos="fade-down" data-aos-delay="0">
             <h1 className="text-base md:text-xl tracking-[6px] font-Jakarta font-semibold uppercase text-center dark:text-slate-950 text-blue-500">
               Contact

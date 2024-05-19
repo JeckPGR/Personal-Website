@@ -1,6 +1,5 @@
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
 
 export default function Icons() {
   return (
@@ -15,11 +14,6 @@ export default function Icons() {
         <a href="https://www.linkedin.com/in/ahmad-dzaky-67b630248/">
           <FaLinkedin />
         </a>{" "}
-      </div>
-      <div className=" hover:text-red-500">
-        <a href="">
-          <FaInstagram />
-        </a>
       </div>
     </>
   );
