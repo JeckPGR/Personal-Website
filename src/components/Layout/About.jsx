@@ -6,7 +6,7 @@ import { Footer } from "../Elements/Footer";
 const AboutSection = () => {
   return (
     <>
-      <section className="bg-primary dark:bg-mywhite px-6 py-11  w-full  flex flex-col text-gray-800  ">
+      <section className="bg-primary dark:bg-mywhite px-6 py-32  w-full  flex flex-col text-gray-800  ">
         {/* Introduction Section */}
         <AboutFirst />
 

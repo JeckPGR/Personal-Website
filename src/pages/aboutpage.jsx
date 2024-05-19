@@ -4,12 +4,12 @@ import Navbar from "../components/navbar";
 
 function Aboutpage() {
   return (
-    <div>
+    <section>
       <Navbar />
       <AboutSection />
       <Darktoggle />
       {/* <Footer /> */}
-    </div>
+    </section>
   );
 }
 

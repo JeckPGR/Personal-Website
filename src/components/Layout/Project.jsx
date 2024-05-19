@@ -3,7 +3,9 @@ import { projectanimation } from "../../Anim/projectpage";
 import { useState, useRef } from "react";
 import { Footer } from "../Elements/Footer";
 import { ProjectData } from "../../Data/projectData";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const Project = () => {
   const [activetype, setactivetype] = useState("Website");
   const projectContainerRef = useRef(null);
@@ -20,10 +22,14 @@ export const Project = () => {
     projectanimation(projectContainerRef);
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  });
+
   return (
     <>
-      <div className="flex flex-col justify-center pt-11 items-center gap-y-20 dark:bg-mywhite bg-primary dark:text-primary text-white">
-        <div>
+      <div className="flex flex-col justify-center pt-32  items-center gap-y-20 dark:bg-mywhite bg-primary dark:text-primary text-white">
+        <div data-aos="fade-down" data-aos-delay="100">
           <h1 className="text-base md:text-xl  tracking-[6px]  font-Jakarta  font-semibold  uppercase text-center dark:text-blue-700 text-blue-500">
             Project
           </h1>
@@ -34,6 +40,8 @@ export const Project = () => {
         <div className=" flex text-center text-slate-600 w-3/4 justify-between lg:justify-around  items-center">
           {["Mobile", "Website"].map((type) => (
             <button
+              data-aos="zoom-out"
+              data-aos-delay="400"
               key={type}
               className={` px-4 md:px-8 py-2 text-slate-200 hover:bg-transparent hover:ring-1 dark:hover:text-white hover:ring-slate-200 dark:hover:bg-slate-500 dark:text-slate-950 dark:ring-0 rounded-full lg:text-lg text-base hover:text-white transition duration-300 ${
                 activetype === type &&

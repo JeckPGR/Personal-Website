@@ -9,6 +9,9 @@ import {
   SiFirebase,
 } from "react-icons/si";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const techIcons = {
   Laravel: <FaLaravel size={28} color="red" />,
@@ -27,12 +30,16 @@ export const ProjectCard = forwardRef(
     ref
   ) => {
     const [imageLoaded, setImageLoaded] = useState(false); //Blur it before load
-    const imageClass = `w-full object-cover   object-cover object-center overflow-hidden group-hover:scale-110 transition-all bg-slate-900 h-full rounded duration-700 ease-in-out ${
+    const imageClass = `w-full object-cover z-10   object-cover object-center overflow-hidden group-hover:scale-110 transition-all bg-slate-900 h-full rounded duration-700 ease-in-out ${
       imageLoaded ? "filter-none" : "filter blur-lg"
     }`;
 
+    useEffect(() => {
+      AOS.init({ duration: 800 });
+    });
     return (
       <div
+        data-aos="zoom-out"
         aria-label="card"
         ref={ref}
         key={id}
@@ -61,7 +68,6 @@ export const ProjectCard = forwardRef(
             </div>
           </div>
           <div className="flex justify-end lg:flex-row text-center gap-3 px-2 py-3 lg:pt-0 items-center">
-            {/* Conditionally render GitHub link based on disableGithubLink flag */}
             {!disableGithubLink && <ButtonCard githuburl={githuburl} />}
             <ButtonCard type="Live" viewurl={viewurl} />
           </div>
@@ -101,7 +107,7 @@ const ButtonCard = ({ type, viewurl, githuburl }) => {
           />
         </a>
         {showTooltip && (
-          <span className="absolute left-4 bottom-full mb-2 text-sm duration-200 h-10 flex items-center justify-center font-medium w-24 text-white bg-black px-2 py-1 rounded-md">
+          <span className="absolute z-30 left-4 bottom-full mb-2 text-sm duration-200 h-10 flex items-center justify-center font-medium w-24 text-white bg-black px-2 py-1 rounded-md">
             Live View
           </span>
         )}

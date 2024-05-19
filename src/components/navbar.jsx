@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <nav className="flex items-center  dark:border-none  shadow dark:shadow   shadow-blue-950 dark:bg-mywhite dark:text-primary  z-20 justify-between bg-primary  px-8  md:px-14  w-full py-3  relative">
+      <nav className="flex items-center fixed top-0  dark:border-none  shadow dark:shadow   shadow-blue-950 dark:bg-mywhite dark:text-primary  z-20 justify-between bg-primary  px-8  md:px-14  w-full py-3  ">
         <Link
           to="/"
           className="text-4xl text-slate-200 font-semibold font-Jakarta dark:text-primary "
@@ -91,13 +91,13 @@ export default function Navbar() {
               >
                 <button
                   role="link"
-                  className="z-10 group-hover:font-semibold font-Jakarta font-semibold group-hover:translate-x-6 transition duration-300"
+                  className="z-10 group-hover:font-semibold font-Jakarta font-semibold group-hover:lg:translate-x-6 transition duration-300"
                   onClick={() => navigateWithAnimation(path)}
                   aria-label={`Navigate to ${path.substring(1) || "Home"} page`}
                 >
                   {path.substring(1) || "Home"}
                 </button>
-                <span className="absolute opacity-0 group-active:opacity-100 lg:group-hover:opacity-100 lg:-translate-x-10 lg:group-hover:translate-x-48  group-active:translate-x-32 transition duration-300 ease-in-out">
+                <span className="absolute opacity-0 group-active:lg:opacity-100 lg:group-hover:opacity-100 lg:-translate-x-10 lg:group-hover:translate-x-48   transition duration-300 ease-in-out">
                   <IoIosArrowForward
                     size={30}
                     className="hover:font-bold"
