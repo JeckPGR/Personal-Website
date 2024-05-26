@@ -18,16 +18,23 @@ export default function Navbar() {
     setToggle(!toggle);
   };
 
-  // Function to handle navigation with animation
   const navigateWithAnimation = (path) => {
-    // Define your animation here, then navigate
-    gsap.to("body", {
-      opacity: 0,
-      duration: 0.5,
+    const tl = gsap.timeline({
       onComplete: () => {
-        navigate(path);
-        gsap.fromTo("body", { opacity: 0 }, { opacity: 1, duration: 0.5 });
+        window.scrollTo(0, 0);
+        navigate(path, { replace: true });
+        gsap.to(".transition-block", {
+          translateX: "100%",
+          duration: 1,
+          ease: "Expo.easeinOut",
+        });
       },
+    });
+
+    tl.to(".transition-block", {
+      translateX: 0,
+      duration: 1,
+      ease: "Expo.easeinOut",
     });
   };
 
@@ -75,7 +82,9 @@ export default function Navbar() {
         <button
           aria-label={toggle ? "Close menu" : "Open menu"}
           aria-expanded={toggle}
-          className={`text-2xl cursor-pointer transform origin-center text-slate-200 dark:text-primary  transition duration-300 ease-in-out `}
+          className={`text-2xl cursor-pointer transform origin-center text-slate-200 dark:text-primary  transition duration-300 ease-in-out ${
+            toggle ? "!-rotate-180" : ""
+          }`}
           onClick={toggleNavbar}
         >
           {toggle ? <MdOutlineClose /> : <LuListFilter />}
@@ -117,6 +126,10 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
+      <div
+        className="transition-block fixed top-0 left-0 w-full h-full bg-primary z-50 dark:bg-slate-100"
+        style={{ transform: "translateX(-100%)" }}
+      ></div>
     </header>
   );
 }

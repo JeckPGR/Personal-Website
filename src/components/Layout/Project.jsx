@@ -43,9 +43,9 @@ export const Project = () => {
               data-aos="zoom-out"
               data-aos-delay="400"
               key={type}
-              className={` px-4 md:px-8 py-2 text-slate-200 hover:bg-transparent hover:ring-1 dark:hover:text-white hover:ring-slate-200 dark:hover:bg-slate-500 dark:text-slate-950 dark:ring-0 rounded-full lg:text-lg text-base hover:text-white transition duration-300 ${
+              className={` px-4 md:px-8 py-2 text-slate-200 hover:bg-transparent  hover:ring-1 dark:hover:text-white hover:ring-slate-200 dark:hover:bg-slate-500 ease-in-out dark:text-slate-950 dark:ring-0 rounded-full lg:text-lg text-base hover:text-white transition duration-500 ${
                 activetype === type &&
-                "dark:bg-slate-950 ring-1 ring-slate-200 bg-transparent dark:text-white"
+                "dark:bg-slate-950 duration-500 ring-1 ring-slate-200 bg-transparent dark:text-white"
               }`}
               onClick={() => handleButtonClick(type)}
             >
@@ -55,7 +55,7 @@ export const Project = () => {
         </div>
         <div
           ref={projectContainerRef}
-          className=" grid grid-cols-1 px-4 md:px-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-10   gap-y-6 gap-x-3 items-center justify-center "
+          className=" grid grid-cols-1 px-4 md:px-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-10   gap-y-12 gap-x-3 items-center justify-center "
         >
           {Filteredproject.length === 0 ? (
             <>
@@ -69,13 +69,17 @@ export const Project = () => {
             Filteredproject.map((data) => (
               <ProjectCard
                 key={data.id}
+                hoverimg={data.hoverimg}
                 tittle={data.tittle}
                 img={data.img}
+                type={data.type}
                 title={data.tittle}
                 viewurl={data.viewurl}
                 loading="lazy"
                 githuburl={data.githuburl}
+                status={data.status}
                 techStack={data.techStack}
+                disableviewLink={data.disableviewLink}
                 disableGithubLink={data.disableGithubLink}
                 ref={(projectRef) => {
                   if (projectRef) {

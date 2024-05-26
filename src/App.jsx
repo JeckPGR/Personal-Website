@@ -3,6 +3,7 @@ import Firstpage from "./pages/firstpage";
 import Projectpage from "./pages/projectpage";
 import Aboutpage from "./pages/aboutpage";
 import Contactpage from "./pages/contactpage";
+
 const router = createBrowserRouter([
   {
     path: "/",

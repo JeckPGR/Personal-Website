@@ -7,6 +7,7 @@ import {
   SiGithub,
   SiFlutter,
   SiFirebase,
+  SiNextdotjs,
 } from "react-icons/si";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useEffect } from "react";
@@ -22,16 +23,32 @@ const techIcons = {
   TailwindCSS: <SiTailwindcss size={32} color="teal" />,
   Flutter: <SiFlutter size={28} color="aqua" />, // Adjust color as needed
   Firebase: <SiFirebase size={28} color="#FFCA28" />, // Adjust color as needed
+  NextJS: <SiNextdotjs size={28} color="green" />, // Adjust color as needed
 };
 
 export const ProjectCard = forwardRef(
   (
-    { id, title, img, viewurl, githuburl, techStack, disableGithubLink },
+    {
+      id,
+      title,
+      img,
+      viewurl,
+      githuburl,
+      techStack,
+      disableGithubLink,
+      disableviewLink,
+      type,
+      status,
+    },
     ref
   ) => {
     const [imageLoaded, setImageLoaded] = useState(false); //Blur it before load
-    const imageClass = `w-full object-cover z-10   object-cover object-center overflow-hidden group-hover:scale-110 transition-all bg-slate-900 h-full rounded duration-700 ease-in-out ${
+    const imageClass = `w-full object-cover relative   top-4 ease-in-out  group-hover:top-12  object-cover object-center  overflow-hidden  transition-all  h-full rounded duration-700 ease-in-out  ${
       imageLoaded ? "filter-none" : "filter blur-lg"
+    } ${
+      type === "Mobile"
+        ? "group-hover:scale-[1.5] group-hover:top-7 group-hover:active-[1.5] group-active:top-0 "
+        : "  scale-[.7] group-hover:scale-110"
     }`;
 
     useEffect(() => {
@@ -43,24 +60,48 @@ export const ProjectCard = forwardRef(
         aria-label="card"
         ref={ref}
         key={id}
-        className="flex flex-col gap-y-2  text-slate-200 transition-all duration-300 lg:w-96  h-72 "
+        className="flex flex-col gap-y-2 z-10    text-slate-200  transition-all rounded    duration-300 lg:w-[450px]    "
       >
         <a
           href={viewurl}
           target="blank"
-          className="overflow-hidden h-full rounded group "
+          className="overflow-hidden h-full rounded group  "
         >
-          <img
-            src={img}
-            loading="lazy"
-            alt="projectimages"
-            className={imageClass}
-            onLoad={() => setImageLoaded(true)}
-          />
+          <div
+            className="relative  w-full h-full  bg-gradient-to-t from-primary  to-[#081f64cf]  
+          dark:bg-[radial-gradient(109.40%_90.55%_at_55.76%_4.29%,rgba(0,0,0,0.20)_0%,rgba(255,250,255,1)_100%)]"
+          >
+            <img
+              src={img}
+              loading="lazy"
+              alt="projectimages"
+              className={imageClass}
+              onLoad={() => setImageLoaded(true)}
+            />
+          </div>
         </a>
-        <div className="flex items-center justify-between mt-2">
-          <div className="flex flex-col gap-y-2 dark:text-primary">
+        <div className="flex items-center justify-between ">
+          <div className="flex flex-col gap-y-2 dark:text-primary ">
+            <div
+              className={`lg:mt-2  rounded  flex items-center w-fit px-3 py-1
+              ${
+                status === "Finished"
+                  ? "ring-1  dark:ring-transparent  ring-transparent  ring-offset-2 dark:ring-offset-primary ring-offset-blue-300 "
+                  : "ring-1  dark:ring-transparent ring-transparent   ring-offset-2 dark:ring-offset-green-500 ring-offset-green-500"
+              }
+              `}
+            >
+              <p
+                className={` uppercase dark:text-primary border-spacing-1 tracking-wide text-sm text-blue-300   font-bold
+                ${
+                  status !== "Finished" && "text-green-500 dark:text-green-500"
+                }`}
+              >
+                {status}
+              </p>
+            </div>
             <h2 className="text-2xl font-bold">{title}</h2>
+
             <div className="flex gap-x-3 items-center">
               {techStack.map((tech, index) => (
                 <div key={index}>{techIcons[tech]}</div>
@@ -69,7 +110,7 @@ export const ProjectCard = forwardRef(
           </div>
           <div className="flex justify-end lg:flex-row text-center gap-3 px-2 py-3 lg:pt-0 items-center">
             {!disableGithubLink && <ButtonCard githuburl={githuburl} />}
-            <ButtonCard type="Live" viewurl={viewurl} />
+            {!disableviewLink && <ButtonCard type="Live" viewurl={viewurl} />}
           </div>
         </div>
       </div>
@@ -127,7 +168,7 @@ const ButtonCard = ({ type, viewurl, githuburl }) => {
           <SiGithub className="w-full h-fit" />
         </a>
         {showTooltip && (
-          <span className="absolute left-4 bottom-full mb-2 text-sm duration-200 h-fit flex items-center justify-center font-medium w-24 text-white bg-black px-2 py-1 rounded-md">
+          <span className="absolute left-4 z-30 bottom-full mb-2 text-sm duration-200 h-fit flex items-center justify-center font-medium w-24 text-white bg-black px-2 py-1 rounded-md">
             GitHub Code
           </span>
         )}
@@ -145,6 +186,9 @@ ButtonCard.propTypes = {
 ProjectCard.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  status: PropTypes.string,
+  disableviewLink: PropTypes.string,
   img: PropTypes.string.isRequired,
   viewurl: PropTypes.string.isRequired,
   githuburl: PropTypes.string.isRequired,

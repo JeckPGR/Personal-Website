@@ -163,7 +163,7 @@ export const AboutFirst = () => {
   return (
     <div className="flex flex-col-reverse h-full     items-center justify-between gap-10 ">
       <div className="w-full flex flex-col lg:justify-start gap-y-4  lg:w-1/2 md:w-3/4   text-mywhite dark:text-slate-950">
-        <div data-aos="fade-right" className="mb-8 ">
+        <div data-aos="fade-right" className="mb-8 " data-aos-delay="1200">
           <h3 className="text-2xl  font-black mb-3    text-mywhite dark:text-slate-950">
             🙌 Hello!
           </h3>
